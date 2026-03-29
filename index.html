@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Memória</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for thematic title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <main>
@@ -12,18 +18,37 @@
         <div class="difficulty-selector">
             <button class="difficulty-btn" data-grid="3">Iniciante (3x3)</button>
             <button class="difficulty-btn active" data-grid="4">Fácil (4x4)</button>
-            <button class="difficulty-btn" data-grid="6">Difícil (6x6)</button>
         </div>
         <div class="game-info">
             <p>Jogadas: <span id="moves-count">0</span></p>
+            <p>Pares Restantes: <span id="pairs-left">0</span></p>
             <p>Recorde: <span id="highscore">--</span></p>
             <p>Tempo: <span id="timer">00:00</span></p>
         </div>
         <section class="memory-game">
             <!-- As cartas serão geradas dinamicamente pelo JavaScript -->
         </section>
-        <button id="restart-btn">Reiniciar</button>
+        <div class="game-controls">
+            <button id="mute-btn" title="Silenciar / Ativar Som">🔊</button>
+            <button id="restart-btn">Reiniciar</button>
+        </div>
     </main>
+
+    <!-- Victory Modal -->
+    <div id="victory-modal-overlay">
+        <div id="victory-modal">
+            <h2>Parabéns!</h2>
+            <p>Você completou o desafio!</p>
+            <div class="final-stats">
+                <p>Jogadas: <span id="final-moves">0</span></p>
+                <p>Tempo: <span id="final-time">00:00</span></p>
+            </div>
+            <div id="most-missed-container" style="display: none;">
+                <p>Você errou mais o par: <br> <strong id="most-missed-card-name"></strong> (<span id="most-missed-card-count"></span> vezes)</p>
+            </div>
+            <button id="play-again-btn">Jogar Novamente</button>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
