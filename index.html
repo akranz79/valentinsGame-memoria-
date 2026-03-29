@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Jogo da Memória do Valentim</h1>
+        <div class="difficulty-selector">
+            <button class="difficulty-btn" data-grid="3">Iniciante (3x3)</button>
+            <button class="difficulty-btn active" data-grid="4">Fácil (4x4)</button>
+            <button class="difficulty-btn" data-grid="6">Difícil (6x6)</button>
+        </div>
+        <div class="game-info">
+            <p>Jogadas: <span id="moves-count">0</span></p>
+            <p>Recorde: <span id="highscore">--</span></p>
+            <p>Tempo: <span id="timer">00:00</span></p>
+        </div>
+        <section class="memory-game">
+            <!-- As cartas serão geradas dinamicamente pelo JavaScript -->
+        </section>
+        <button id="restart-btn">Reiniciar</button>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
